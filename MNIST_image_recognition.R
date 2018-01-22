@@ -76,7 +76,7 @@ for (i in 1:length(train$Numbers)) {
   else if (train$Numbers[i] == 2){
     train$Digit0[i] <- 0
     train$Digit1[i] <- 0
-    train$Digit2[i] <- 2
+    train$Digit2[i] <- 1
     train$Digit3[i] <- 0
     train$Digit4[i] <- 0
     train$Digit5[i] <- 0
@@ -123,7 +123,7 @@ for (i in 1:length(train$Numbers)) {
   }
   else if (train$Numbers[i] == 6){
     train$Digit0[i] <- 0
-    train$Digit1[i] <- 1
+    train$Digit1[i] <- 0
     train$Digit2[i] <- 0
     train$Digit3[i] <- 0
     train$Digit4[i] <- 0
@@ -199,7 +199,7 @@ for (i in 1:length(test$Numbers)) {
   else if (test$Numbers[i] == 2){
     test$Digit0[i] <- 0
     test$Digit1[i] <- 0
-    test$Digit2[i] <- 2
+    test$Digit2[i] <- 1
     test$Digit3[i] <- 0
     test$Digit4[i] <- 0
     test$Digit5[i] <- 0
@@ -246,7 +246,7 @@ for (i in 1:length(test$Numbers)) {
   }
   else if (test$Numbers[i] == 6){
     test$Digit0[i] <- 0
-    test$Digit1[i] <- 1
+    test$Digit1[i] <- 0
     test$Digit2[i] <- 0
     test$Digit3[i] <- 0
     test$Digit4[i] <- 0
@@ -356,7 +356,7 @@ sum(predictionsvsoutput$correctestimate/length(predictionsvsoutput))
 # whole data set
 nn <- nnet(y = train[,786:795], x = train[,2:785], data = train, 
            size = 28, entropy = TRUE, MaxNWts = 24000)
-?nnet
+
 
 
 predictions.nnet <- predict(nn, newdata = test)
